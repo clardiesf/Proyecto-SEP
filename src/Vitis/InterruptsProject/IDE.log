@@ -1,0 +1,190 @@
+12:10:43 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Mi\SEP2024_local\JuegoRitmoFPGA\src\Vitis\InterruptsProject\temp_xsdb_launch_script.tcl
+12:10:43 INFO  : Registering command handlers for Vitis TCF services
+12:10:46 INFO  : Platform repository initialization has completed.
+12:10:46 INFO  : XSCT server has started successfully.
+12:10:47 INFO  : Successfully done setting XSCT server connection channel  
+12:10:47 INFO  : plnx-install-location is set to ''
+12:10:47 INFO  : Successfully done query RDI_DATADIR 
+12:10:47 INFO  : Successfully done setting workspace for the tool. 
+12:11:59 INFO  : Result from executing command 'getProjects': InterrupsV1_Hard
+12:11:59 INFO  : Result from executing command 'getPlatforms': 
+12:13:25 INFO  : Result from executing command 'getProjects': InterrupsV1_Hard
+12:13:25 INFO  : Result from executing command 'getPlatforms': InterrupsV1_Hard|C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/InterrupsV1_Hard.xpfm
+12:16:05 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+12:19:59 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+12:41:16 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Mi\SEP2024_local\JuegoRitmoFPGA\src\Vitis\InterruptsProject\temp_xsdb_launch_script.tcl
+12:41:18 INFO  : XSCT server has started successfully.
+12:41:18 INFO  : plnx-install-location is set to ''
+12:41:18 INFO  : Successfully done setting XSCT server connection channel  
+12:41:18 INFO  : Successfully done setting workspace for the tool. 
+12:41:24 INFO  : Platform repository initialization has completed.
+12:41:24 INFO  : Registering command handlers for Vitis TCF services
+12:41:25 INFO  : Successfully done query RDI_DATADIR 
+14:23:15 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+14:31:58 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+14:32:45 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+14:33:43 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+14:34:54 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+14:37:23 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+14:37:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:37:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+14:37:55 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+14:38:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:39:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+14:39:16 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+14:40:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+14:40:34 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+14:41:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:41:21 INFO  : Jtag cable 'Digilent Zybo Z7 210351B3FC62A' is selected.
+14:41:21 INFO  : 'jtag frequency' command is executed.
+14:41:21 INFO  : Context for 'APU' is selected.
+14:41:21 INFO  : System reset is completed.
+14:41:24 INFO  : 'after 3000' command is executed.
+14:41:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FC62A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FC62A-13722093-0"}' command is executed.
+14:41:26 INFO  : FPGA configured successfully with bitstream "C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/bitstream/BDv1_wrapper.bit"
+14:41:26 INFO  : Context for 'APU' is selected.
+14:41:26 INFO  : Hardware design and registers information is loaded from 'C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/hw/BDv1_wrapper.xsa'.
+14:41:26 INFO  : 'configparams force-mem-access 1' command is executed.
+14:41:26 INFO  : Context for 'APU' is selected.
+14:41:26 INFO  : Sourcing of 'C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/psinit/ps7_init.tcl' is done.
+14:41:27 INFO  : 'ps7_init' command is executed.
+14:41:27 INFO  : 'ps7_post_config' command is executed.
+14:41:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:27 INFO  : The application 'C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/Debug/InterrupsV1_Soft.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:41:27 INFO  : 'configparams force-mem-access 0' command is executed.
+14:41:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FC62A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FC62A-13722093-0"}
+fpga -file C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/bitstream/BDv1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/hw/BDv1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/Debug/InterrupsV1_Soft.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:41:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:28 INFO  : 'con' command is executed.
+14:41:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:41:28 INFO  : Launch script is exported to file 'C:\Users\Mi\SEP2024_local\JuegoRitmoFPGA\src\Vitis\InterruptsProject\.sdk\launch_scripts\single_application_debug\systemdebugger_interrupsv1_soft_system_standalone.tcl'
+14:48:07 INFO  : Disconnected from the channel tcfchan#1.
+14:48:13 INFO  : Checking for BSP changes to sync application flags for project 'InterrupsV1_Soft'...
+14:48:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:49:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+14:49:03 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+14:49:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:49:31 INFO  : Jtag cable 'Digilent Zybo Z7 210351B3FC62A' is selected.
+14:49:31 INFO  : 'jtag frequency' command is executed.
+14:49:31 INFO  : Context for 'APU' is selected.
+14:49:31 INFO  : System reset is completed.
+14:49:34 INFO  : 'after 3000' command is executed.
+14:49:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FC62A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FC62A-13722093-0"}' command is executed.
+14:49:36 INFO  : FPGA configured successfully with bitstream "C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/bitstream/BDv1_wrapper.bit"
+14:49:36 INFO  : Context for 'APU' is selected.
+14:49:36 INFO  : Hardware design and registers information is loaded from 'C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/hw/BDv1_wrapper.xsa'.
+14:49:36 INFO  : 'configparams force-mem-access 1' command is executed.
+14:49:36 INFO  : Context for 'APU' is selected.
+14:49:36 INFO  : Sourcing of 'C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/psinit/ps7_init.tcl' is done.
+14:49:37 INFO  : 'ps7_init' command is executed.
+14:49:37 INFO  : 'ps7_post_config' command is executed.
+14:49:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:49:37 INFO  : The application 'C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/Debug/InterrupsV1_Soft.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:49:37 INFO  : 'configparams force-mem-access 0' command is executed.
+14:49:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FC62A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FC62A-13722093-0"}
+fpga -file C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/bitstream/BDv1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/hw/BDv1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft/Debug/InterrupsV1_Soft.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:49:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:49:37 INFO  : 'con' command is executed.
+14:49:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:49:37 INFO  : Launch script is exported to file 'C:\Users\Mi\SEP2024_local\JuegoRitmoFPGA\src\Vitis\InterruptsProject\.sdk\launch_scripts\single_application_debug\debugger_interrupsv1_soft-default.tcl'
+14:50:53 INFO  : Disconnected from the channel tcfchan#2.
+16:03:45 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Mi\SEP2024_local\JuegoRitmoFPGA\src\Vitis\InterruptsProject\temp_xsdb_launch_script.tcl
+16:03:47 INFO  : XSCT server has started successfully.
+16:03:47 INFO  : Successfully done setting XSCT server connection channel  
+16:03:47 INFO  : plnx-install-location is set to ''
+16:03:47 INFO  : Successfully done setting workspace for the tool. 

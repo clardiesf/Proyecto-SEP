@@ -1,0 +1,166 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 02.10.2024 16:58:56
+-- Design Name: 
+-- Module Name: StateMachine - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+
+
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+
+entity SM_Move is
+    Port (
+    clk                 : in    std_logic;                                  -- reloj de 100Mhz
+    left                : in    std_logic;
+    rigt                : in    std_logic;
+    rst                 : in    std_logic; 
+    en                  : in    std_logic;
+    flag                : in    std_logic_vector (3 downto 0);               -- flag de estado de la State-Machine
+    move                : out   std_logic_vector (7 downto 0)              -- jugada player A
+    );
+end SM_Move;
+
+----------------------------------------------------------------------------------
+-- COMPONENT BEHAVORIAL DESCRIPTION HERE:
+
+
+architecture Behavioral of SM_Move is
+
+-- CONSTANT DECLARATIONS HERE:
+
+-- SIGNAL DECLARATIONS HERE:
+
+    type state_type is (
+    NULL_STATE,
+    RED_STATE, 
+    GREEN_STATE, 
+    BLUE_STATE,
+    CIAN_STATE,
+    PURPLE_STATE,
+    YELLOW_STATE,
+    ORANGE_STATE
+    );
+
+    signal past, prst:                  std_logic;
+    signal state:                       state_type;
+    signal left_state:                  state_type;
+    signal rigt_state:                  state_type;
+    signal left_prst, left_past:        std_logic;
+    signal rigt_prst, rigt_past:        std_logic;
+    
+begin
+  
+
+DINAMIC_PROCESS: process (clk, rst)
+begin
+    if (rst = '1') then
+        left_prst                <= left;
+        left_past                <= left_prst;
+        
+        rigt_prst                <= rigt;
+        rigt_past                <= rigt_prst;
+        
+        state               <= NULL_STATE;
+        left_state          <= RED_STATE;
+        rigt_state          <= RED_STATE;
+        
+    elsif(rising_edge(clk)) then
+        prst                    <= en;
+        past                    <= prst;
+        
+        left_prst               <= left;
+        left_past               <= left_prst;
+        
+        rigt_prst               <= rigt;
+        rigt_past               <= rigt_prst;
+        
+        if (left_prst = '1' and left_past = '0') then
+            state               <= left_state;
+        elsif (rigt_prst = '1' and rigt_past = '0') then
+            state               <= rigt_state;
+        elsif (prst = '1' and past = '0') then
+            state               <= NULL_STATE;
+        end if;
+        
+    case state is
+    when NULL_STATE     => 
+    rigt_state          <= RED_STATE;
+    left_state          <= RED_STATE;
+    move                <= "00000000"; 
+    
+    when RED_STATE      =>
+    rigt_state          <= GREEN_STATE;
+    left_state          <= ORANGE_STATE;
+    move                <= "00000001"; 
+    
+    when GREEN_STATE    =>
+    rigt_state          <= BLUE_STATE;
+    left_state          <= RED_STATE;
+    move                <= "00000010"; 
+    
+    when BLUE_STATE     =>
+    rigt_state          <= CIAN_STATE;
+    left_state          <= GREEN_STATE;
+    move                <= "00000100"; 
+    
+    when CIAN_STATE     =>
+    rigt_state          <= PURPLE_STATE;
+    left_state          <= BLUE_STATE;
+    move                <= "00001000"; 
+    
+    when PURPLE_STATE   =>
+    rigt_state          <= YELLOW_STATE;
+    left_state          <= CIAN_STATE;
+    move                <= "00010000"; 
+    
+    when YELLOW_STATE   =>
+    rigt_state          <= ORANGE_STATE;
+    left_state          <= PURPLE_STATE;
+    move                <= "00100000"; 
+    
+    when ORANGE_STATE   =>
+    rigt_state          <= RED_STATE;
+    left_state          <= YELLOW_STATE;
+    move                <= "01000000"; 
+    end case;
+    end if;
+end process DINAMIC_PROCESS;
+
+NEXT_PROCESS: process(state)
+begin
+    
+end process NEXT_PROCESS;
+    
+                   
+-----------------------------------------------------------------
+-- LOGIC USER CODE HERE:
+
+
+                                                                
+end Behavioral;

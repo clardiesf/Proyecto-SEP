@@ -1,0 +1,7 @@
+/*InterrupsV1_Hard*/
+the_ROM_image:
+{
+  [bootloader]<InterrupsV1_Hard/boot/fsbl.elf>
+   <bitstream> 
+  <elf,ps7_cortexa9_0>
+}

@@ -1,0 +1,125 @@
+
+Reporte del Proyecto: Juego de Ritmo en FPGA
+
+Objetivo del Proyecto
+Crear un juego de ritmo tipo Friday Night Funkin o Guitar Hero para la FPGA ZYBO Z10, donde el jugador debe presionar 
+botones específicos al ritmo de la música. El juego se visualiza en pantalla, mostrando una secuencia de botones que el 
+jugador debe seguir presionando en el momento adecuado para ganar puntos.
+
+Descripción del Proyecto
+
+El proyecto consiste en un juego de ritmo en el cual:
+- Pantalla de Guía: Se muestran en pantalla flechas o botones que indican al jugador qué debe presionar. Estos elementos 
+  se desplazan desde una posición inicial hacia una línea de referencia. El jugador debe sincronizar su acción con el 
+  momento en que el ícono del botón alcanza la línea de referencia.
+- Interacción del Jugador: El jugador utiliza una botonera para seguir las indicaciones. Al presionar el botón correcto 
+  en el momento adecuado, el jugador gana puntos. Si el jugador falla, el puntaje se reduce o pierde la oportunidad de 
+  obtener puntos adicionales.
+- Sincronización con la Música: Los movimientos de los íconos en pantalla están sincronizados con la música, exigiendo 
+  precisión en el tiempo. La lógica del juego, que detecta el tiempo correcto para la acción, es manejada por el 
+  procesador Zynq en la FPGA.
+
+Componentes Principales del Diseño en Vivado
+
+1. Clocking Wizard: Ajusta la frecuencia de la FPGA de 125 MHz a 100 MHz para sincronizar todos los bloques y la lógica del juego.
+2. Zynq7 Processor System (Zynq PS): Núcleo del sistema donde se ejecuta el software del juego en C. Este procesador coordina 
+   la comunicación y el procesamiento de datos en el juego a través de la interfaz AXI.
+3. AXI GPIO (Entradas y Salidas):
+   - GPIO Flechas y Botones: Dos bloques de GPIO AXI configurados para recibir entradas de:
+       - Flechas en la botonera.
+       - Botones adicionales (triángulo, cuadrado, equis, círculo).
+   - GPIO Pantalla: Un bloque GPIO adicional para controlar la visualización en pantalla, donde aparecerán las indicaciones 
+     para el jugador.
+4. Interrupt Controller: Módulo encargado de gestionar las interrupciones que se activan al presionar cualquier flecha o botón. 
+   Esto permite que el procesador reaccione inmediatamente a las acciones del jugador, evaluando si fueron correctas y 
+   sincronizadas con el ritmo.
+5. State Machine (SM): Este nuevo bloque controla el flujo de pantallas y secuencia de juego mediante una máquina de estados 
+   (SM), permitiendo una navegación estructurada a lo largo de las diferentes fases del juego.
+
+Diagrama de Flujo de la Máquina de Estados (SM)
+
+                   ┌─────────────┐
+                   │     IDLE    │
+                   └──────┬──────┘
+                          │
+                          ▼
+                ┌────────────────┐
+                │ WELCOME_SCREEN │
+                └──────┬─────────┘
+                          │
+                          ▼
+                ┌────────────────┐
+                │  ENTER_NAME    │
+                └──────┬─────────┘
+                          │
+                          ▼
+                ┌────────────────────────┐
+                │ GAME_START_NOTIFICATION│
+                └──────┬─────────────────┘
+                          │
+                          ▼
+                ┌────────────────┐
+                │   GAMEPLAY     │
+                └──────┬─────────┘
+                     ┌─┴─┐
+                     │PAUSE│
+                     └─┬─┘
+                          │
+                          ▼
+                ┌────────────────┐
+                │   SHOW_SCORE   │
+                └──────┬─────────┘
+                          │
+                          ▼
+                ┌────────────────┐
+                │ HIGH_SCORES    │
+                └──────┬─────────┘
+                          │
+                          ▼
+                   ┌─────────────┐
+                   │    IDLE     │
+                   └─────────────┘
+
+Flujo del Proyecto
+
+1. Configuración Inicial en Vivado:
+   - Crear un nuevo proyecto en Vivado para la FPGA ZYBO Z10 en modo RTL.
+   - Añadir y configurar los bloques básicos necesarios.
+
+2. Bloques Añadidos:
+   - Clocking Wizard para ajustar la frecuencia.
+   - Zynq7 Processor System para ejecutar el software de control del juego.
+   - AXI GPIO para conectar la pantalla y la botonera de botones.
+   - Interrupt Controller para manejar las interrupciones de las flechas y botones.
+   - State Machine (SM) para gestionar el flujo de pantallas y fases del juego.
+
+3. Conexión de los Bloques con AXI:
+   - Conectar cada bloque AXI GPIO, el Interrupt Controller y la State Machine al procesador Zynq mediante el bus AXI.
+   - Configurar el espacio de direcciones para cada periférico conectado.
+
+4. Configuración de Interrupciones:
+   - Configurar las interrupciones para los bloques GPIO asociados con la botonera de flechas y botones adicionales.
+   - Conectar estas interrupciones al controlador de interrupciones y asignar prioridades según las necesidades del juego.
+
+5. Generación y Exportación del Diseño:
+   - Una vez finalizado el diagrama de bloques, generar el diseño y exportarlo a Vitis para la programación en C.
+
+Histórico de Cambios
+
+1. Inicialización del Proyecto: Configuración de un nuevo proyecto en Vivado.
+2. Añadido de Bloques: Clocking Wizard, Zynq7 Processor System, tres AXI GPIO, Interrupt Controller y la nueva State Machine.
+3. Configuración de Interrupciones: Las interrupciones fueron configuradas para responder a las entradas de flechas y botones, 
+   permitiendo reacciones rápidas en el juego.
+4. Descripción del Juego: Se añadió una descripción detallada del objetivo del juego y su funcionamiento, similar a Guitar Hero 
+   o Friday Night Funkin, donde el jugador sigue indicaciones en pantalla sincronizadas con música.
+5. Creación de la Máquina de Estados (SM): Añadido un IP Core con una máquina de estados para gestionar el flujo de pantallas 
+   del juego, incluyendo un diagrama de flujo que detalla cada estado y las transiciones.
+
+Lista de Tareas Pendientes
+
+1. Crear la máquina de estados (State Machine).
+2. Crear la lógica de comunicación por UART.
+3. Crear la lógica de manejo de interrupciones.
+
+Este reporte actualizado documenta la inclusión de la máquina de estados (SM) y proporciona una visión completa del proyecto hasta 
+el momento, junto con el diagrama de flujo que define el control de la secuencia de pantallas en el juego.

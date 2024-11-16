@@ -1,0 +1,45 @@
+
+Reporte de Diseño para el Control de Periféricos en el Proyecto de FPGA
+
+**Objetivo**: 
+El proyecto consiste en la programación de una FPGA donde el hardware se diseña en Vivado y el procesamiento se programa en Vitis en lenguaje C.
+La idea inicial del proyecto es mostrar un símbolo en pantalla (usando caracteres ASCII) y que el usuario presione un botón según la indicación en pantalla, 
+además de escuchar una canción de fondo. Los periféricos a controlar son:
+
+- Botones: up, left, right, down
+- Pantalla LCD
+- Bocina
+- RGB
+
+### Concepto Inicial para el Control de Timers
+
+Se propuso el uso de tres timers para controlar diferentes periféricos en el sistema, cada uno con una función específica:
+
+1. **Timer para la Pantalla (pantallaLCD)**:
+   - **Función**: Refrescar la visualización en la pantalla LCD a una frecuencia establecida.
+2. **Timer para los Botones**:
+   - **Función**: Leer los estados de los botones de entrada para detectar pulsaciones del usuario.
+3. **Timer para la Bocina**:
+   - **Función**: Controlar la reproducción de la canción en la bocina para mantener el ritmo.
+
+### Recomendaciones para la Frecuencia de Timers, Periodo y Prioridad de Interrupciones
+
+| Timer               | Frecuencia Recomendada | Periodo del Timer | Prioridad         |
+|---------------------|------------------------|--------------------|-------------------|
+| **Pantalla LCD**    | 30-60 Hz               | 16-33 ms          | Media            |
+| **Botones**         | 100-200 Hz             | 5-10 ms           | Alta             |
+| **Bocina (sonido)** | 200 Hz - 1 kHz         | 1-5 ms            | Media            |
+
+#### Justificación
+
+1. **Pantalla LCD**: Una frecuencia de actualización de 30-60 Hz es suficiente para la pantalla. Esto permite una visualización fluida sin necesidad de alta prioridad.
+2. **Botones**: Los botones requieren una respuesta rápida. Al usar una frecuencia de 100-200 Hz, se garantiza que las pulsaciones se detecten sin retraso. Este timer debe tener la **prioridad más alta**.
+3. **Bocina**: La frecuencia de actualización depende de la música y debería estar entre 200 Hz y 1 kHz para lograr una salida de audio fluida.
+
+### Consideraciones Adicionales
+
+- **Uso de un Timer Global**: Se sugirió una alternativa donde un único timer de alta frecuencia se encargue de gestionar las tareas de los periféricos usando contadores internos.
+- **Uso de GPIO con Interrupciones para los Botones**: Alternativamente, se puede configurar el GPIO para que active interrupciones directas al presionar un botón, eliminando la necesidad de un timer para los botones.
+- **Control de la Pantalla LCD con DMA**: Si se usa DMA para la pantalla LCD, podría evitarse el uso del timer dedicado a la pantalla, aligerando la carga sobre el procesador.
+
+Este enfoque garantiza un balance entre la carga de procesamiento, la eficiencia y la precisión en la respuesta de los periféricos.

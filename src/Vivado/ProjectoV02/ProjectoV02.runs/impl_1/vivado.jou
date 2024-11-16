@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Nov  8 12:06:43 2024
+# Process ID: 19996
+# Current directory: C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vivado/ProjectoV02/ProjectoV02.runs/impl_1
+# Command line: vivado.exe -log BDv1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source BDv1_wrapper.tcl -notrace
+# Log file: C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vivado/ProjectoV02/ProjectoV02.runs/impl_1/BDv1_wrapper.vdi
+# Journal file: C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vivado/ProjectoV02/ProjectoV02.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source BDv1_wrapper.tcl -notrace

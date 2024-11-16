@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="InterrupsV1_Soft" location="C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Soft" platform="C:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/InterrupsV1_Hard.xpfm" platformUID="xilinx:zybo-z7-10::0.0(custom)" systemProject="InterrupsV1_Soft_system" sysConfig="InterrupsV1_Hard" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="2f0242ca8f2ecb1feb0c3272378a4efb">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.498520908">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.398299670" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

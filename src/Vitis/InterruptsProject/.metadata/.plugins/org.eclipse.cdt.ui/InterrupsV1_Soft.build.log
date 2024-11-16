@@ -1,0 +1,25 @@
+14:48:15 **** Incremental Build of configuration Debug for project InterrupsV1_Soft ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/test.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/sw/InterrupsV1_Hard/standalone_domain/bspinclude/include -MMD -MP -MF"src/test.d" -MT"src/test.o" -o "src/test.o" "../src/test.c"
+'Finished building: ../src/test.c'
+' '
+'Building target: InterrupsV1_Soft.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/Mi/SEP2024_local/JuegoRitmoFPGA/src/Vitis/InterruptsProject/InterrupsV1_Hard/export/InterrupsV1_Hard/sw/InterrupsV1_Hard/standalone_domain/bsplib/lib -o "InterrupsV1_Soft.elf"  ./src/test.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: InterrupsV1_Soft.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size InterrupsV1_Soft.elf  |tee "InterrupsV1_Soft.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29536	   1952	  22712	  54200	   d3b8	InterrupsV1_Soft.elf
+'Finished building: InterrupsV1_Soft.elf.size'
+' '
+
+14:48:17 Build Finished (took 1s.664ms)
+
